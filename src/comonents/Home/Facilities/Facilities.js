@@ -26,7 +26,7 @@ const Facilities = () => {
     return (
         <div className="container">
             <h6 className="text-brand text-center">Facilites</h6>
-            <p className="text-center" style={{ color: 'rgb(31, 23, 49)', fontSize: '33px', fontWeight: '900' }}>Experience the smoother & <br /> faster internet connection</p>
+            <p className="text-center" style={{ color: 'rgb(31, 23, 49)', fontSize: '33px', fontWeight: '900' }}>Experience smoother & <br /> faster internet connection</p>
             <div className="row">
                 {
                     facilitesData.map(facility => <FacilitesCard facility={facility} key={facility.title}></FacilitesCard>)

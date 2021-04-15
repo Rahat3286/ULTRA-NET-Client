@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import brandImage from '../../../Images/Ultra Net Image.jpg';
 
 const Navbar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
             <div className="container">
@@ -12,23 +15,24 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav text-center ms-auto">
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-brand" href="#">Home</a>
+                            <Link to="/home" className="nav-link me-5 text-brand" href="#">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-brand" href="#">About Us</a>
+                            <Link to="/" className="nav-link me-5 text-brand" href="#">About Us</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-brand" href="#">Projects</a>
+                            <Link to="/" className="nav-link me-5 text-brand" href="#">Projects</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-brand" href="#"  >Contact</a>
+                            <Link to="/" className="nav-link me-5 text-brand" href="#"  >Contact</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-5 text-brand" href="#"  >Admin</a>
+                            <Link to="/admin" className="nav-link me-5 text-brand" href="#"  >Admin</Link>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link btn btn-brand text-white me-5" href="#">Login</a>
-                        </li>
+                        <li className="nav-item"><Link to="/login" className="nav-link">{
+                        loggedInUser.isSignedIn ? <img style={{ height: '20px', width: '20px' }} src={loggedInUser.photo} alt="" /> :
+                            <span className="btn btn-brand text-white">Log In</span>
+                    }</Link></li>
                     </ul>
                 </div>
             </div>

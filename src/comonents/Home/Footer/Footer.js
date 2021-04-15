@@ -45,7 +45,7 @@ const Footer = () => {
                         </ul>
                         <div className="mt-5">
                             <h6 className="text-white">Call now</h6>
-                            <button className="btn btn-brand text-white"><FontAwesomeIcon icon={faPhone} /> +413-2619-789</button>
+                            <button className="btn btn-info text-white"><FontAwesomeIcon icon={faPhone} /> +413-2619-789</button>
                         </div>
                     </FooterCard>
                 </div>
