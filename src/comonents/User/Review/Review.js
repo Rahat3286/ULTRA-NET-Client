@@ -56,8 +56,8 @@ const Review = () => {
                 <Sidebar />
             </div>
             <div className="col-md-10">
-                <div className="container">
-                    <h1>this review section</h1>
+                <div className="container py-5">
+                    <h1 className="text-brand">Review</h1>
                 </div>
                 <div>
                     <form className="review-form" onSubmit={handleSubmit(onSubmit)}>

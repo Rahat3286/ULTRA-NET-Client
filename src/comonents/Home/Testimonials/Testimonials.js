@@ -6,7 +6,7 @@ import customerImage3 from '../../../Images/customerImage3.jpg';
 
 const Testimonials = () => {
 
-    const [reviews,setReviews] = useState([])
+    const [reviews,setReviews] = useState([]);
     useEffect(()=>{
         fetch('http://localhost:5000/reviews')
         .then(res=>res.json())

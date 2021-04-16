@@ -1,15 +1,27 @@
 import React from 'react';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
+import { useForm } from 'react-hook-form';
 
 const MakeAdmin = () => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const onSubmit = (data) =>{
+        console.log(data);
+    }
     return (
         <div className="row">
             <div className="col-md-2">
                 <Sidebar/>
             </div>
             <div className="col-md-10">
-                <div className="container">
-                    <h1>this is makeadmin section</h1>
+                <div className="container py-5">
+                    <h1 className="text-brand">Make Admin</h1>
+                </div>
+                <div>
+                    <form className="addService-form" onSubmit={handleSubmit(onSubmit)}>
+                        <input name="email" {...register("email", { required: true })} placeholder="Service Name" />
+                        {errors.email && <span className="error">Title is required</span>}
+                        <button className="btn btn-brand text-white mt-4">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
