@@ -4,13 +4,31 @@ import { useForm } from 'react-hook-form';
 
 const MakeAdmin = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = (data) =>{
-        console.log(data);
+    const onSubmit = (data) => {
+        const adminData = {
+            email: data.email
+        }
+        console.log(adminData);
+        fetch('http://localhost:5000/makeAdmins', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(adminData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('new admin has been added')
+                }
+            })
     }
+
+
     return (
         <div className="row">
             <div className="col-md-2">
-                <Sidebar/>
+                <Sidebar />
             </div>
             <div className="col-md-10">
                 <div className="container py-5">
