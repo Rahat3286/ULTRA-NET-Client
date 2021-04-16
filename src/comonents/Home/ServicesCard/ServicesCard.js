@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ServicesCard = ({ service }) => {
+
     return (
         <div className="col-md-4 d-flex justify-content-center">
             <div className="shadow-lg"  style={{ width: '20rem',cursor:'pointer' }}>

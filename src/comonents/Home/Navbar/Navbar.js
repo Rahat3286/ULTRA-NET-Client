@@ -27,7 +27,7 @@ const Navbar = () => {
                             <Link to="/" className="nav-link me-5 text-brand" href="#"  >Contact</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/admin" className="nav-link me-5 text-brand" href="#"  >Admin</Link>
+                            <Link to="/dashboard" className="nav-link me-5 text-brand" href="#"  >Dashboard</Link>
                         </li>
                         <li className="nav-item"><Link to="/login" className="nav-link">{
                         loggedInUser.isSignedIn ? <img style={{ height: '20px', width: '20px' }} src={loggedInUser.photo} alt="" /> :

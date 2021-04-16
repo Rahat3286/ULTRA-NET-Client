@@ -22,7 +22,7 @@ const servicesData = [
         title: 'Your Custom Plan',
         price: '80',
         description: 'Praesent tincidunt porttitor libero, id sodales enim tincidunt. Proin dignissim leo finibus risus.'
-    },
+    }
 ];
 
 const Services = () => {
