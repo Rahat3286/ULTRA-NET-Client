@@ -1,6 +1,6 @@
 .sidebar {
     background-image: linear-gradient(40deg, #d5e7ea, #d5e7ea);
-    position: fixed;
+    /* position: fixed; */
 }
 
 .sidebar li {
