@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import { removeFromDatabseBookingList } from '../../../Utilities/databaseManager';
+import { removeFromDatabaseBookingList } from '../../../Utilities/databaseManager';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 import BookedItem from '../BookedItem/BookedItem';
 
@@ -11,7 +11,7 @@ const BookingList = () => {
     const cancelService = (serviceId)=>{
         const newService = addService.filter(service => service._id !== serviceId);
         setAddService(newService);
-        removeFromDatabseBookingList(serviceId);
+        removeFromDatabaseBookingList(serviceId);
     }
 
     return (
@@ -20,7 +20,8 @@ const BookingList = () => {
                 <Sidebar/>
             </div>
             <div className="col-md-10">
-                <div className="container">
+                <div className="container py-5">
+                    <h1 className="text-brand">Booking List</h1>
                     <div className="row">
                         <div className="col-md-4">
                             {

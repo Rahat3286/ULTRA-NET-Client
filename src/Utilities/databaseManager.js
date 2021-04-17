@@ -26,7 +26,7 @@ const addToDatabseBookingList = (_id, count) => {
     localStorage.setItem(getDataId(), JSON.stringify(currentBookingList));
 }
 
-const removeFromDatabseBookingList = _id => {
+const removeFromDatabaseBookingList = _id => {
     const currentBookingList = getDatabseBookingList();
     delete currentBookingList[_id];
     localStorage.setItem(getDataId(), JSON.stringify(currentBookingList));
@@ -36,4 +36,4 @@ const processBooking = (bookingList)=>{
     localStorage.removeItem(getDataId());
 }
 
-export { addToDatabseBookingList, getDatabseBookingList, removeFromDatabseBookingList, processBooking}
+export { addToDatabseBookingList, getDatabseBookingList, removeFromDatabaseBookingList, processBooking}

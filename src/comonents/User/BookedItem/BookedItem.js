@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BookedItem = (props) => {
-    // console.log(props);
+    console.log(props);
     const { image, title, price, description, _id } = props.service;
     console.log(_id)
     return (
