@@ -36,7 +36,7 @@ const MakeAdmin = () => {
                 </div>
                 <div>
                     <form className="addService-form" onSubmit={handleSubmit(onSubmit)}>
-                        <input name="email" {...register("email", { required: true })} placeholder="Service Name" />
+                        <input name="email" {...register("email", { required: true })} placeholder="Enter e-mail" />
                         {errors.email && <span className="error">Title is required</span>}
                         <button className="btn btn-brand text-white mt-4">Submit</button>
                     </form>
