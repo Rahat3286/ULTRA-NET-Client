@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router';
+import { removeFromDatabseBookingList } from '../../../Utilities/databaseManager';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
+import BookedItem from '../BookedItem/BookedItem';
 
 const BookingList = () => {
+    const [addService, setAddService] = useState([]);
+    const history =useHistory();
+
+    const cancelService = (serviceId)=>{
+        const newService = addService.filter(service => service._id !== serviceId);
+        setAddService(newService);
+        removeFromDatabseBookingList(serviceId);
+    }
+
     return (
         <div className="row">
             <div className="col-md-2">
@@ -9,7 +21,13 @@ const BookingList = () => {
             </div>
             <div className="col-md-10">
                 <div className="container">
-                    <h1>this is bookingList section</h1>
+                    <div className="row">
+                        <div className="col-md-4">
+                            {
+                                addService.map(service => <BookedItem key={service._id} cancelService={cancelService} service={service}></BookedItem>)
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

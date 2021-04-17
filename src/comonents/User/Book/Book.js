@@ -10,7 +10,25 @@ const Book = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (event) => {
+        const bookingsData ={
+            name: event.name,
+            email:event.email,
+            service:event.service
+        }
         console.log(event);
+        fetch('http://localhost:5000/addBookings',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bookingsData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('You Paid Successfully')
+                }
+            })
     }
     return (
         <div className="row">

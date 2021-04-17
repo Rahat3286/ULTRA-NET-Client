@@ -24,7 +24,6 @@ const MakeAdmin = () => {
             })
     }
 
-
     return (
         <div className="row">
             <div className="col-md-2">
