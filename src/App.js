@@ -36,30 +36,27 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          {/* <PrivateRoute path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard/>
-          </PrivateRoute> */}
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/book">
+          </PrivateRoute>
+          <PrivateRoute path="/book">
             <Book />
-          </Route>
-          <Route path="/bookingList">
+          </PrivateRoute>
+          <PrivateRoute path="/bookingList">
             <BookingList/>
-          </Route>
-          <Route path="/review">
+          </PrivateRoute>
+          <PrivateRoute path="/review">
             <Review/>
-          </Route>
-          <Route path="/addService">
+          </PrivateRoute>
+          <PrivateRoute path="/addService">
             <AddService/>
-          </Route>
-          <Route path="/makeAdmin">
+          </PrivateRoute>
+          <PrivateRoute path="/makeAdmin">
             <MakeAdmin/>
-          </Route>
-          <Route path="/orderList">
+          </PrivateRoute>
+          <PrivateRoute path="/orderList">
             <OrderList/>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserContext.Provider>

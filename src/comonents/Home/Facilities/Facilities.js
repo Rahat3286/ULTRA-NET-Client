@@ -3,6 +3,7 @@ import facilityImage1 from '../../../Images/download upto 1gbps.png';
 import facilityImage2 from '../../../Images/internet uptime.png';
 import facilityImage3 from '../../../Images/customer support.png';
 import FacilitesCard from '../FacilitiesCard/FacilitesCard';
+import { CircularProgress } from '@material-ui/core';
 
 const facilitesData = [
     {
@@ -28,6 +29,9 @@ const Facilities = () => {
             <h6 className="text-brand text-center">Facilites</h6>
             <p className="text-center" style={{ color: 'rgb(31, 23, 49)', fontSize: '33px', fontWeight: '900' }}>Experience smoother & <br /> faster internet connection</p>
             <div className="row">
+                {
+                    facilitesData.lenght === 0 && <CircularProgress color="primary"/>
+                }
                 {
                     facilitesData.map(facility => <FacilitesCard facility={facility} key={facility.title}></FacilitesCard>)
                 }
