@@ -9,7 +9,7 @@ const Services = () => {
     const [bookingList, setBookingList] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://boiling-journey-92823.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -19,18 +19,18 @@ const Services = () => {
         const sameService = bookingList.find(service => service._id == toBeAddedId);
         let count = 1;
         let newBookingList;
-        if(sameService){
+        if (sameService) {
             count = sameService.qunatity + 1;
             sameService.qunatity = count;
             const others = bookingList.filter(service => service._id !== toBeAddedId);
-            newBookingList= [...others,sameService];
+            newBookingList = [...others, sameService];
         }
         else {
             service.quantity = 1;
             newBookingList = [...bookingList, service];
         }
         setBookingList(newBookingList);
-        addToDatabseBookingList(service._id,count);
+        addToDatabseBookingList(service._id, count);
     }
 
     return (
@@ -86,7 +86,7 @@ export default Services;
 // const Services = () => {
 //     const [services,setServices]=useState([]);
 //     useEffect(() => {
-//         fetch('http://localhost:5000/services')
+//         fetch('https://boiling-journey-92823.herokuapp.com/services')
 //             .then(res => res.json())
 //             .then(data => setServices(data))
 //     }, [])

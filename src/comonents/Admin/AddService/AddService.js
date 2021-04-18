@@ -34,7 +34,7 @@ const AddService = () => {
             description: data.description
         }
         console.log(data);
-        fetch('http://localhost:5000/addServices', {
+        fetch('https://boiling-journey-92823.herokuapp.com/addServices', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

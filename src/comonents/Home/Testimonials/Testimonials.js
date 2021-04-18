@@ -6,12 +6,12 @@ import customerImage3 from '../../../Images/customerImage3.jpg';
 
 const Testimonials = () => {
 
-    const [reviews,setReviews] = useState([]);
-    useEffect(()=>{
-        fetch('http://localhost:5000/reviews')
-        .then(res=>res.json())
-        .then(data=>setReviews(data))
-    },[])
+    const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        fetch('https://boiling-journey-92823.herokuapp.com/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [])
     return (
         <div className="container mt-5 pt-5">
             <h1 className="text-center" style={{ color: 'rgb(31, 23, 49)' }}>Testimonials</h1>

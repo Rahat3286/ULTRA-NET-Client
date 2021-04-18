@@ -9,7 +9,7 @@ const MakeAdmin = () => {
             email: data.email
         }
         console.log(adminData);
-        fetch('http://localhost:5000/makeAdmins', {
+        fetch('https://boiling-journey-92823.herokuapp.com/makeAdmins', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

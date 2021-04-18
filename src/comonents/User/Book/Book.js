@@ -69,7 +69,7 @@ export default Book;
 //             service:event.service
 //         }
 //         console.log(event);
-//         fetch('http://localhost:5000/addBookings',{
+//         fetch('https://boiling-journey-92823.herokuapp.com/addBookings',{
 //             method: 'POST',
 //             headers: {
 //                 'Content-Type': 'application/json'

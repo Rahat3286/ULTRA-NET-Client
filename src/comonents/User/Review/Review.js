@@ -1,6 +1,6 @@
-import React, { useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
-import { useForm  } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { UserContext } from '../../../App';
 import './Review.css';
@@ -36,19 +36,19 @@ const Review = () => {
             description: data.description
         }
         console.log(reviewsData);
-        fetch('http://localhost:5000/addReviews',{
+        fetch('https://boiling-journey-92823.herokuapp.com/addReviews', {
             method: 'POST',
-            headers:{
+            headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(reviewsData)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            if(data){
-                alert('Thanks for your feedback')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('Thanks for your feedback')
+                }
+            })
     }
     return (
         <div className="row">
@@ -68,7 +68,7 @@ const Review = () => {
                         <input name="location"  {...register("location", { required: true })} placeholder="Enter your location " />
                         {errors.location && <span className="error">What is your location?</span>}
                         <input name="image" type="file" onChange={handleImageUpload} />
-                        <input name="description" {...register("description", { required: true })} placeholder="Write Your Thoughts"/>
+                        <input name="description" {...register("description", { required: true })} placeholder="Write Your Thoughts" />
                         <br />
                         <button className="btn btn-brand text-white mt-4">Submit</button>
                     </form>
